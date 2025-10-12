@@ -50,7 +50,7 @@
 // }
 
 import React, { useState, useEffect } from "react";
-import PgFormPage from "../../pages/pgFormPage";
+import PgFormPage from "../../pages/PgFormPage";
 import DashBoard from "../Dashboard/dashboard";
 import { loginUser } from "../../api/Login"; // adjust path
 
