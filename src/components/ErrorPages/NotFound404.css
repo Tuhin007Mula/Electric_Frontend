@@ -1,0 +1,129 @@
+/* .page_404 {
+  padding: 40px 0;
+  background: #fff;
+  font-family: "Arvo", serif;
+}
+
+.page_404 img {
+  width: 100%;
+}
+
+.four_zero_four_bg {
+  background-image: url('/Error_404.gif');
+  height: 700px;
+  background-position: center;
+}
+
+.four_zero_four_bg h1 {
+  font-size: 100px;
+}
+
+.four_zero_four_bg h3 {
+  font-size: 80px;
+}
+
+.link_404 {
+  color: #fff !important;
+  padding: 10px 20px;
+  background: #39ac31;
+  margin: 20px 0;
+  display: inline-block;
+}
+
+.contant_box_404 {
+  margin-top: -150px;
+} */
+
+.page_404 {
+  padding: 40px 0;
+  background: #fff;
+  font-family: "Arvo", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;  
+  text-align: center;
+  position: relative;
+  overflow: hidden;  
+}
+
+.four_zero_four_bg {
+  background-image: url('/Error_404.gif');
+  background-position: center center; 
+  background-repeat: no-repeat;      
+  background-size: contain;          
+  width: 90vw;          /* bigger on large screens */
+  max-width: 1200px;    /* increased max size */
+  height: 60vh;         /* bigger height */
+  max-height: 800px;    /* increased max height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.four_zero_four_bg h1 {
+  position: absolute;
+  top: 8%;                          
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(100px, 15vw, 120px); 
+  color: #000;
+  font-family: "Algerian", serif;
+  letter-spacing: 3px;
+}
+
+.link_404 {
+  color: #fff !important;
+  padding: 10px 20px;
+  background: #39ac31;
+  margin: 15px 0;
+  display: inline-block;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+.contant_box_404 {
+  margin-top: -5vh;  /* default gap, will adjust per screen */
+}
+
+/* 📱 Tablet adjustments */
+@media (max-width: 768px) {
+  .four_zero_four_bg {
+    width: 90vw;
+    height: 45vh;
+  }
+
+  .four_zero_four_bg h1 {
+    font-size: clamp(80px, 18vw, 100px);
+    top: 12%;
+  }
+
+  .contant_box_404 {
+    margin-top: -8vh;  
+  }
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 480px) {
+  .four_zero_four_bg {
+    width: 95vw;
+    height: 35vh;
+  }
+
+  .four_zero_four_bg h1 {
+    font-size: clamp(60px, 25vw, 80px);
+    top: 15%;
+  }
+
+  .link_404 {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .contant_box_404 {
+    margin-top: -6vh;  
+  }
+}
