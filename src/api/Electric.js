@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API_BASE = import.meta.env.VITE_API_URL || "https://electric-backend-ivory.vercel.app";
 
 if (import.meta.env.MODE === "development") {
   console.log("🌐 API_BASE =", API_BASE);
