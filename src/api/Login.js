@@ -26,7 +26,7 @@
 import axios from "axios";
 
 // ✅ Use environment variable from Vite
-const API_BASE_URL = import.meta.env.VITE_API_URL || "https://electric-backend-ivory.vercel.app";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "https://electric-backend-three.vercel.app/";
 
 export const loginUser = async ({ username, password }) => {
   try {
