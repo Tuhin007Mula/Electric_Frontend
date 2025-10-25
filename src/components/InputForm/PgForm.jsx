@@ -350,6 +350,7 @@ import PowerGeneration from "./PowerGeneration";
 import PlantsConsumption from "./PlantsConsumption";
 import BoilerConsumption from "./BoilerConsumption";
 import CompressorConsumption from "./CompressorConsumption";
+import Production from "./Production";
 import LoginForm from "../LoginForm/LoginForm";
 import { apiRequest } from "../../api/Electric"; // adjust path if needed
 
@@ -430,18 +431,21 @@ const PgForm = () => {
         Prep: {
           WBSEDCL: Number(formData.prep_WBSEDCL) || 0,
           SOLAR: Number(formData.prep_SOLAR) || 0,
-          BOILER: Number(formData["prep_BOILER Steam (Ton)"]) || 0,
+          BOILER_STEAM: Number(formData["prep_BOILER Steam (Ton)"]) || 0,
+          BOILER_UNIT: Number(formData["prep_BOILER Steam Unit"]) || 0,
         },
         Solvent: {
           WBSEDCL: Number(formData.solvent_WBSEDCL) || 0,
           SOLAR: Number(formData.solvent_SOLAR) || 0,
-          BOILER: Number(formData["solvent_BOILER Steam (Ton)"]) || 0,
+          BOILER_STEAM: Number(formData["solvent_BOILER Steam (Ton)"]) || 0,
+          BOILER_UNIT: Number(formData["solvent_BOILER Steam Unit"]) || 0,
         },
         Refinery: {
           WBSEDCL: Number(formData.refinery_WBSEDCL) || 0,
           SOLAR: Number(formData.refinery_SOLAR) || 0,
           COMPRESSOR: Number(formData.refinery_COMPRESSOR) || 0,
-          BOILER: Number(formData["refinery_BOILER Steam (Ton)"]) || 0,
+          BOILER_STEAM: Number(formData["refinery_BOILER Steam (Ton)"]) || 0,
+          BOILER_UNIT: Number(formData["refinery_BOILER Steam Unit"]) || 0,
         },
         NewPlant: {
           WBSEDCL: Number(formData.newplant_WBSEDCL) || 0,
@@ -488,6 +492,12 @@ const PgForm = () => {
         ELGI_RH: Number(formData["ELGI Running Hour"]) || 0,
         KAISER_1_RH: Number(formData["Kaiser 1 Running Hour"]) || 0,
         KAISER_2_RH: Number(formData["Kaiser 2 Running Hour"]) || 0,
+      },
+
+      Production: {
+        BRAN_FEEDING: Number(formData["Bran Feeding (Ton)"]) || 0,
+        CRUDE_CHARGE: Number(formData["Crude Charge (Ton)"]) || 0,
+        PADDY_FEEDING: Number(formData["Paddy Feeding (Ton)"]) || 0,
       },
     };
 
@@ -566,6 +576,7 @@ const handleLogout = () => {
           <PlantsConsumption formData={formData} handleChange={handleChange} />
           <BoilerConsumption formData={formData} handleChange={handleChange} />
           <CompressorConsumption formData={formData} handleChange={handleChange} />
+          <Production formData={formData} handleChange={handleChange} />
 
           {/* Submit */}
           <div className="text-center">

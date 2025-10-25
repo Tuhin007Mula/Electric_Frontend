@@ -11,8 +11,8 @@ const PlantsConsumption = ({ formData, handleChange }) => {
       <h3 className="font-bold p-2 text-lg text-center text-black mb-4 bg-gradient-to-r from-blue-300/60 to-indigo-400/60 backdrop-blur-md shadow-md">
         Prep Section
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        {["prep_WBSEDCL", "prep_SOLAR", "prep_BOILER Steam (Ton)"].map((field) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        {["prep_WBSEDCL", "prep_SOLAR", "prep_BOILER Steam (Ton)", "prep_BOILER Steam Unit"].map((field) => (
           <div key={field}>
             <label className="block font-medium text-black mb-1">{field.replace("prep_", "")}</label>
             <input
@@ -31,8 +31,8 @@ const PlantsConsumption = ({ formData, handleChange }) => {
       <h3 className="font-bold p-2 text-lg text-center text-black mb-4 bg-gradient-to-r from-blue-300/60 to-indigo-400/60 backdrop-blur-md shadow-md">
         Solvent Plant
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        {["solvent_WBSEDCL", "solvent_SOLAR", "solvent_BOILER Steam (Ton)"].map((field) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        {["solvent_WBSEDCL", "solvent_SOLAR", "solvent_BOILER Steam (Ton)", "solvent_BOILER Steam Unit"].map((field) => (
           <div key={field}>
             <label className="block font-medium text-black mb-1">{field.replace("solvent_", "")}</label>
             <input
@@ -51,8 +51,8 @@ const PlantsConsumption = ({ formData, handleChange }) => {
       <h3 className="font-bold p-2 text-lg text-center text-black mb-4 bg-gradient-to-r from-blue-300/60 to-indigo-400/60 backdrop-blur-md shadow-md">
         Refinery
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        {["refinery_WBSEDCL", "refinery_SOLAR", "refinery_COMPRESSOR", "refinery_BOILER Steam (Ton)"].map((field) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        {["refinery_WBSEDCL", "refinery_SOLAR", "refinery_COMPRESSOR", "refinery_BOILER Steam (Ton)", "refinery_BOILER Steam Unit"].map((field) => (
           <div key={field}>
             <label className="block font-medium text-black mb-1">{field.replace("refinery_", "")}</label>
             <input
@@ -111,8 +111,8 @@ const PlantsConsumption = ({ formData, handleChange }) => {
       <h3 className="font-bold p-2 text-lg text-center text-black mb-4 bg-gradient-to-r from-blue-300/60 to-indigo-400/60 backdrop-blur-md shadow-md">
         Dryer
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        {["dryer_WBSEDCL", "dryer_BOILER Steam (Ton)"].map((field) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        {["dryer_WBSEDCL", "dryer_BOILER Steam (Ton)", "dryer_BOILER Steam Unit"].map((field) => (
           <div key={field}>
             <label className="block font-medium text-black mb-1">{field.replace("dryer_", "")}</label>
             <input
