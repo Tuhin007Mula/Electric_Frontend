@@ -7,7 +7,7 @@ const CompressorConsumption = ({ formData, handleChange }) => {
         Compressor
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        {["comp_ELGI", "comp_Kaiser 1", "comp_Kaiser 2", "ELGI Running Hour", "Kaiser 1 Running Hour", "Kaiser 2 Running Hour"].map((field) => (
+        {["comp_ELGI WBSEDCL Unit", "comp_Kaeser 1 WBSEDCL Unit", "comp_Kaeser 2 WBSEDCL Unit", "comp_ELGI SOLAR Unit", "comp_Kaeser 1 SOLAR Unit", "comp_Kaeser 2 SOLAR Unit", "ELGI Running Hour", "Kaeser 1 Running Hour", "Kaeser 2 Running Hour"].map((field) => (
           <div key={field}>
             <label className="block font-medium text-black mb-1">
               {field.replace("comp_", "")}

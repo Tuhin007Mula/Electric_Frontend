@@ -12,7 +12,7 @@ const BoilerConsumption = ({ formData, handleChange }) => {
         TF Boiler
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        {["boiler_TF_WBSEDCL", "boiler_TF_SOLAR", "boiler_TF_RO", "boiler_TF_COMPRESSOR"].map((field) => (
+        {["boiler_TF_WBSEDCL Unit", "boiler_TF_Running Hour", "boiler_TF_COMPRESSOR Unit", "boiler_TF_Husk Consumption (Ton)"].map((field) => (
           <div key={field}>
             <label className="block font-medium text-black mb-1">
               {field.replace("boiler_TF_", "")}
@@ -33,8 +33,8 @@ const BoilerConsumption = ({ formData, handleChange }) => {
       <h3 className="font-bold p-2 text-lg text-center text-black mb-4 bg-gradient-to-r from-blue-300/60 to-indigo-400/60 backdrop-blur-md shadow-md">
         12 Ton Boiler
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        {["boiler_12_WBSEDCL", "boiler_12_SOLAR", "boiler_12_RO", "boiler_12_COMPRESSOR"].map((field) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        {["boiler_12_WBSEDCL Unit", "boiler_12_SOLAR Unit", "boiler_12_Running Hour", "boiler_12_RO Unit", "boiler_12_COMPRESSOR Unit", "boiler_12_Steam Generation (Ton)", "boiler_12_Water Consumption (Ton)", "boiler_12_Husk Consumption (Ton)"].map((field) => (
           <div key={field}>
             <label className="block font-medium text-black mb-1">
               {field.replace("boiler_12_", "")}
@@ -55,8 +55,8 @@ const BoilerConsumption = ({ formData, handleChange }) => {
       <h3 className="font-bold p-2 text-lg text-center text-black mb-4 bg-gradient-to-r from-blue-300/60 to-indigo-400/60 backdrop-blur-md shadow-md">
         18 Ton Boiler
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        {["boiler_18_WBSEDCL", "boiler_18_SOLAR", "boiler_18_RO", "boiler_18_COMPRESSOR"].map((field) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        {["boiler_18_WBSEDCL Unit", "boiler_18_Running Hour", "boiler_18_RO Unit", "boiler_18_COMPRESSOR Unit", "boiler_18_Steam Generation (Ton)", "boiler_18_Water Consumption (Ton)", "boiler_18_Husk Consumption (Ton)"].map((field) => (
           <div key={field}>
             <label className="block font-medium text-black mb-1">
               {field.replace("boiler_18_", "")}
