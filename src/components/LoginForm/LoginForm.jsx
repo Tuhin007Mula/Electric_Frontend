@@ -135,22 +135,23 @@ export default function LoginForm() {
               />
             </div>
             <div className="flex items-center mb-4 bg-gray-100 rounded-md px-3 py-2">
-          <span className="mr-2 text-lg">🔒</span>
-          <input
-            type={showPassword ? "text" : "password"}
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="flex-1 bg-transparent outline-none text-[15px]"
-          />
-          <button
-            type="button"
-            onClick={() => setShowPassword(!showPassword)}
-            className="ml-2 text-gray-600 hover:text-gray-800 focus:outline-none"
-          >
-            {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-          </button>
-        </div>
+              <span className="mr-2 text-lg">🔒</span>
+              <input
+                key={showPassword ? "text" : "password"} // fixes Safari re-render
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="flex-1 bg-transparent outline-none text-[15px]"
+              />
+              <span
+                onClick={() => setShowPassword(!showPassword)}
+                className="ml-2 text-gray-600 hover:text-gray-800 cursor-pointer select-none"
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </span>
+            </div>
+
 
             {/* ERROR MESSAGE */}
             {error && <p className="text-red-600 text-sm mb-3">{error}</p>}
