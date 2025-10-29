@@ -50,6 +50,7 @@
 // }
 
 import React, { useState, useEffect } from "react";
+import { Eye, EyeOff } from "lucide-react";
 import PgFormPage from "../../pages/PgFormPage";
 import DashBoard from "../Dashboard/dashboard";
 import { loginUser } from "../../api/Login"; // adjust path
@@ -57,6 +58,7 @@ import { loginUser } from "../../api/Login"; // adjust path
 export default function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false); // ✅ track login state
   const [role, setRole] = useState("");
@@ -133,15 +135,22 @@ export default function LoginForm() {
               />
             </div>
             <div className="flex items-center mb-4 bg-gray-100 rounded-md px-3 py-2">
-              <span className="mr-2 text-lg">🔒</span>
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="flex-1 bg-transparent outline-none text-[15px]"
-              />
-            </div>
+          <span className="mr-2 text-lg">🔒</span>
+          <input
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="flex-1 bg-transparent outline-none text-[15px]"
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="ml-2 text-gray-600 hover:text-gray-800 focus:outline-none"
+          >
+            {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+          </button>
+        </div>
 
             {/* ERROR MESSAGE */}
             {error && <p className="text-red-600 text-sm mb-3">{error}</p>}
