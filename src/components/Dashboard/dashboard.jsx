@@ -1214,9 +1214,9 @@ const handleExport = async () => {
       // rec.COMPRESSORConsumption?.ELGI ?? 0,
       // rec.COMPRESSORConsumption?.KAISER1 ?? 0,
       // rec.COMPRESSORConsumption?.KAISER2 ?? 0,
-      `${rec.COMPRESSORConsumption?.ELGI ?? 0} / ${rec.COMPRESSORConsumption?.ELGI_RH ?? 0} Hrs`,
-      `${rec.COMPRESSORConsumption?.KAESER1 ?? 0} / ${rec.COMPRESSORConsumption?.KAESER1_RH ?? 0} Hrs`,
-      `${rec.COMPRESSORConsumption?.KAESER2 ?? 0} / ${rec.COMPRESSORConsumption?.KAESER2_RH ?? 0} Hrs`,
+      `${rec.COMPRESSORConsumption?.ELGI ?? 0} (W) / ${rec.COMPRESSORConsumption?.ELGI_SOLAR ?? 0} (S) / ${rec.COMPRESSORConsumption?.ELGI_RH ?? 0} Hrs`,
+      `${rec.COMPRESSORConsumption?.KAESER1 ?? 0} (W) / ${rec.COMPRESSORConsumption?.KAESER1_SOLAR ?? 0} (S) / ${rec.COMPRESSORConsumption?.KAESER1_RH ?? 0} Hrs`,
+      `${rec.COMPRESSORConsumption?.KAESER2 ?? 0} (W) / ${rec.COMPRESSORConsumption?.KAESER2_SOLAR ?? 0} (S) / ${rec.COMPRESSORConsumption?.KAESER2_RH ?? 0} Hrs`,
       rec.COMPRESSORConsumption?.REFINERY ?? 0,
       rec.COMPRESSORConsumption?.NEW_PLANT ?? 0,
       rec.COMPRESSORConsumption?.OLD_PLANT ?? 0,
@@ -1742,7 +1742,7 @@ return (
         </div>
 
         {/* COMPRESSOR Card */}
-        <div className="bg-white shadow-lg rounded-xl p-6 min-w-6xl mx-auto border border-gray-200 mb-0 mt-0">
+        <div className="bg-white shadow-lg rounded-xl p-6 min-w-450 mx-auto border border-gray-200 mb-0 mt-0">
           <h2 className="text-lg font-semibold text-gray-800 py-2 rounded-t-lg sticky top-0 z-10 bg-[#EDD3F8] text-center">
             COMPRESSOR
           </h2>
@@ -1783,6 +1783,7 @@ return (
                 "BOILER",
               ].map((label) => {
                 const value = record.COMPRESSORConsumption?.[label] ?? 0;
+                const solarValue = record.COMPRESSORConsumption?.[`${label}_SOLAR`] ?? 0;
                 const rhValue = record.COMPRESSORConsumption?.[`${label}_RH`] ?? 0;
                 return (
                   <div key={label}>
@@ -1790,7 +1791,7 @@ return (
                       type="text"
                       value={
                         ["ELGI", "KAESER1", "KAESER2"].includes(label)
-                          ? `${value} / ${rhValue} Hrs`
+                          ? `${value} (W) / ${solarValue} (S) / ${rhValue} Hrs`
                           : value
                       }
                       readOnly
