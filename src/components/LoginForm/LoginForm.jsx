@@ -134,8 +134,8 @@ export default function LoginForm() {
                 className="flex-1 bg-transparent outline-none text-[15px]"
               />
             </div>
-            <div className="flex items-center mb-4 bg-gray-100 rounded-md px-3 py-2">
-              <span className="mr-2 text-lg">🔒</span>
+            <div className="flex items-center mb-4 bg-gray-100 rounded-md px-2 py-2">
+              <span className="mr-0 text-lg">🔒</span>
               <input
                 key={showPassword ? "text" : "password"} // fixes Safari re-render
                 type={showPassword ? "text" : "password"}
@@ -146,7 +146,7 @@ export default function LoginForm() {
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="ml-2 text-gray-600 hover:text-gray-800 cursor-pointer select-none"
+                className="ml-0 text-gray-600 hover:text-gray-800 cursor-pointer select-none"
               >
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </span>
