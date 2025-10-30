@@ -1592,12 +1592,12 @@ return (
         </div>
 
         {/* Plant Wise Consumption Card */}
-        <div className="bg-white shadow-lg rounded-xl p-6 min-w-6xl mx-auto border border-gray-200 mb-0 mt-0">
+        <div className="bg-white shadow-lg rounded-xl p-6 min-w-600 mx-auto border border-gray-200 mb-0 mt-0">
           <h2 className="text-lg font-semibold text-gray-800 py-2 rounded-t-lg sticky top-0 z-10 bg-[#FECB7D] text-center">
             Plant Wise Consumption
           </h2>
-          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-4 mb-2 sticky top-12 bg-white z-10">
-            {["PREP_SOLVENT", "REFINERY", "RICE_MILL"].map((label) => (
+          <div className="grid grid-cols-6 sm:grid-cols-6 md:grid-cols-6 gap-4 mb-2 sticky top-12 bg-white z-10">
+            {["PREP_SOLVENT", "PREP_SOLVENT_STEAM_CONSUMPTION", "REFINERY", "REFINERY_STEAM_CONSUMPTION", "RICE_MILL", "RICE_MILL_STEAM_CONSUMPTION"].map((label) => (
               <div key={label}>
                 <label className="block text-sm font-bold text-gray-600 mb-1 text-center pt-4">
                   {label}
@@ -1613,12 +1613,14 @@ return (
           {safeData.map((record, idx) => (
             <div
               key={idx}
-              className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-4 mb-2"
+              className="grid grid-cols-6 sm:grid-cols-6 md:grid-cols-6 gap-4 mb-2"
             >
-              {["PREP_SOLVENT", "REFINERY", "RICE_MILL"].map((label) => {
+              {["PREP_SOLVENT", "P_S_STEAM", "REFINERY", "R_STEAM", "RICE_MILL", "R_M_STEAM"].map((label) => {
                 const value = record.plantWiseConsumption?.[label] ?? 0;
+                const sptValue = (((record.plantWiseConsumption?.[label])/(record.plantWiseConsumption?.[`${label}_PRODUCTION`]))*100).toFixed(2) ?? 0;
                 const rhValue = record.plantWiseConsumption?.[`${label}_PRODUCTION`] ?? 0;
                 const ptValue = ((record.plantWiseConsumption?.[label])/(record.plantWiseConsumption?.[`${label}_PRODUCTION`])).toFixed(2) ?? 0;
+                console.log(ptValue);
                 return (
                   <div key={label}>
                     <input
@@ -1626,7 +1628,7 @@ return (
                       value={
                         ["PREP_SOLVENT", "REFINERY", "RICE_MILL"].includes(label)
                           ? `${value} Unit / ${rhValue} Ton / ${ptValue} unit per Ton`
-                          : value
+                          : `${value} Ton / ${sptValue} Kg per Ton`
                       }
                       readOnly
                       className="w-full rounded-lg border border-gray-300 px-3 py-2 cursor-not-allowed bg-[#F9F0D8]"
@@ -1806,16 +1808,16 @@ return (
         </div>
 
         {/* 12 TON BOILER Card */}
-        <div className="bg-white shadow-lg rounded-xl p-6 min-w-3xl mx-auto border border-gray-200 mb-0 mt-0">
+        <div className="bg-white shadow-lg rounded-xl p-6 min-w-4xl mx-auto border border-gray-200 mb-0 mt-0">
           <h2 className="text-lg font-semibold text-gray-800 py-2 rounded-t-lg sticky top-0 z-10 bg-[#CCC8FB] text-center">
             12 TON BOILER
           </h2>
           <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 gap-4 mb-2 sticky top-12 bg-white z-10">
             {[
               "UNIT CONSUMPTION",
-              "STEAM GENERATION",
-              "WATER CONSUMPTION",
-              "HUSK CONSUMPTION",
+              "STEAM GENERATION (Ton)",
+              "WATER CONSUMPTION (Ton)",
+              "HUSK CONSUMPTION (Ton)",
             ].map((label) => (
               <div key={label}>
                 <label className="block text-sm font-bold text-gray-600 mb-1 text-center pt-4">
@@ -1863,16 +1865,16 @@ return (
         </div>
 
         {/* 18 TON BOILER Card */}
-        <div className="bg-white shadow-lg rounded-xl p-6 min-w-3xl mx-auto border border-gray-200 mb-0 mt-0">
+        <div className="bg-white shadow-lg rounded-xl p-6 min-w-4xl mx-auto border border-gray-200 mb-0 mt-0">
           <h2 className="text-lg font-semibold text-gray-800 py-2 rounded-t-lg sticky top-0 z-10 bg-[#F0BEEB] text-center">
             18 TON BOILER
           </h2>
           <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 gap-4 mb-2 sticky top-12 bg-white z-10">
             {[
               "UNIT CONSUMPTION",
-              "STEAM GENERATION",
-              "WATER CONSUMPTION",
-              "HUSK CONSUMPTION",
+              "STEAM GENERATION (Ton)",
+              "WATER CONSUMPTION (Ton)",
+              "HUSK CONSUMPTION (Ton)",
             ].map((label) => (
               <div key={label}>
                 <label className="block text-sm font-bold text-gray-600 mb-1 text-center pt-4">

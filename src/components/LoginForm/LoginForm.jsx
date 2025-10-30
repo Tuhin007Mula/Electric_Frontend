@@ -148,7 +148,7 @@ export default function LoginForm() {
                 onClick={() => setShowPassword(!showPassword)}
                 className="ml-0 text-gray-600 hover:text-gray-800 cursor-pointer select-none"
               >
-                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                {showPassword ? <Eye size={20} /> : <EyeOff size={20} />}
               </span>
             </div>
 
